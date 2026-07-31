@@ -1,0 +1,1121 @@
+/* =====================================================
+   Local Store Maps - Frontend Clean CSS
+   Panel trái 45%, map phải 55%
+===================================================== */
+
+.lsm-store-locator,
+.lsm-store-locator * {
+    box-sizing: border-box;
+}
+
+.lsm-store-locator {
+    --lsm-yellow: var(--lsm-primary, #ffcc00);
+    --lsm-text: #222;
+    --lsm-muted: #444;
+    --lsm-blue: #1580a8;
+    --lsm-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Variable", Tahoma, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    --lsm-control-gutter: 12px;
+    --lsm-search-row-height: 68px;
+    --lsm-filter-row-height: 72px;
+    --lsm-controls-height: 140px;
+    --lsm-height: 650px;
+    --lsm-card-height: 145px;
+
+    position: relative;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: minmax(430px, 42%) minmax(0, 1fr) !important;
+    width: 100%;
+    min-height: 660px;
+    isolation: isolate;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    color: var(--lsm-text);
+    font-family: var(--lsm-font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.lsm-store-locator input,
+.lsm-store-locator select,
+.lsm-store-locator button,
+.lsm-store-locator h1,
+.lsm-store-locator h2,
+.lsm-store-locator h3,
+.lsm-store-locator p,
+.lsm-store-locator span,
+.lsm-store-locator a,
+.lsm-store-locator option {
+    font-family: var(--lsm-font-family) !important;
+}
+
+.lsm-store-locator i,
+.lsm-store-locator .fa,
+.lsm-store-locator .fa-solid,
+.lsm-store-locator .fa-regular {
+    font-family: "Font Awesome 6 Free" !important;
+}
+
+.lsm-store-locator .fa-brands {
+    font-family: "Font Awesome 6 Brands" !important;
+}
+
+/* =====================================================
+   Left panel
+===================================================== */
+
+.lsm-panel {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    min-width: 0;
+    max-width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border-right: 1px solid #d9d9d9;
+}
+
+.lsm-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: var(--lsm-controls-height);
+    background: var(--lsm-yellow);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.lsm-search,
+.lsm-filters {
+    position: relative;
+    z-index: 1;
+    background: var(--lsm-yellow);
+}
+
+/* =====================================================
+   Search
+===================================================== */
+
+.lsm-search {
+    display: block;
+    height: var(--lsm-search-row-height);
+    min-height: var(--lsm-search-row-height);
+    max-height: var(--lsm-search-row-height);
+    padding: 12px var(--lsm-control-gutter) 8px;
+    overflow: hidden;
+}
+
+.lsm-search-inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+
+.lsm-search input {
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 48px;
+    min-height: 48px;
+    margin: 0 !important;
+    padding: 0 62px 0 16px;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    border-radius: 0;
+    outline: none;
+    background-color: white;
+    color: #30343b;
+    box-shadow: none;
+    font-size: 15px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lsm-search input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+
+.lsm-search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #111;
+    cursor: pointer;
+    box-shadow: none;
+    font-size: 22px;
+    line-height: 1;
+    transform: none;
+}
+
+.lsm-search-button i {
+    display: block;
+    line-height: 1;
+}
+
+.lsm-search-button:hover,
+.lsm-search-button:focus {
+    background: transparent;
+    color: #111;
+}
+
+/* =====================================================
+   Filters
+===================================================== */
+
+.lsm-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: var(--lsm-filter-row-height);
+    min-height: var(--lsm-filter-row-height);
+    max-height: var(--lsm-filter-row-height);
+    padding: 10px var(--lsm-control-gutter) 14px;
+    overflow: hidden;
+}
+
+.lsm-filters select {
+    display: block;
+    min-width: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px;
+    max-height: 48px;
+    min-height: 48px;
+    margin: 0;
+    padding: 0 42px 0 14px;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    border-radius: 0;
+    outline: none;
+    background-color: white;
+    color: #30343b;
+    box-shadow: none;
+    font-size: 15px;
+    line-height: 1.2;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L8 8L14 2' stroke='%23222' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px 10px;
+}
+
+.lsm-filters select::-ms-expand {
+    display: none;
+}
+
+.lsm-store-locator input[type="search"],
+.lsm-store-locator select,
+.lsm-store-locator button {
+    box-sizing: border-box !important;
+    float: none !important;
+    max-width: 100% !important;
+    box-shadow: none;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.elementor .lsm-store-locator input[type="search"],
+.elementor .lsm-store-locator select,
+.elementor .lsm-store-locator button,
+.elementor-location-single .lsm-store-locator input[type="search"],
+.elementor-location-single .lsm-store-locator select,
+.elementor-location-single .lsm-store-locator button {
+    font-family: var(--lsm-font-family) !important;
+}
+
+/* =====================================================
+   Store list
+===================================================== */
+
+.lsm-result-count {
+    padding: 16px 18px;
+    border-bottom: 1px solid #ededed;
+    background: #fff;
+    color: #111;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.35;
+}
+
+.lsm-result-count strong {
+    font-weight: 800;
+}
+
+.lsm-list {
+    flex: 1;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    background: #fff;
+    scrollbar-color: #111 #e9e9e9;
+    scrollbar-width: thin;
+}
+
+.lsm-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.lsm-list::-webkit-scrollbar-track {
+    background: #e9e9e9;
+}
+
+.lsm-list::-webkit-scrollbar-thumb {
+    background: #111;
+    border-radius: 0;
+    min-height: 48px;
+}
+
+/* =====================================================
+   Store card
+===================================================== */
+
+.lsm-store-card {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 18px;
+    width: 100%;
+    max-width: 100%;
+    height: var(--lsm-card-height);
+    min-height: var(--lsm-card-height);
+    max-height: var(--lsm-card-height);
+    padding: 16px 14px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0;
+    border-bottom: 1px solid #ededed;
+    background: #fff;
+    transition: background-color 160ms ease;
+}
+
+.lsm-store-card:hover,
+.lsm-store-card.is-active {
+    background: #E6E6E6;
+}
+
+.lsm-card-image {
+    width: 160px;
+    height: 105px;
+    min-width: 160px;
+    max-width: 160px;
+    overflow: hidden;
+    align-self: start;
+    background: #e8e8e8;
+}
+
+.lsm-card-image img,
+.lsm-popup-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lsm-no-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ececec, #d7d7d7);
+}
+
+.lsm-card-body,
+.lsm-popup-body {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.lsm-card-body {
+    height: 100%;
+    max-height: 113px;
+    padding-right: 6px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.lsm-card-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.lsm-card-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.lsm-card-body::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 8px;
+}
+
+.lsm-store-card:hover .lsm-card-body,
+.lsm-store-card:focus-within .lsm-card-body {
+    -ms-overflow-style: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #777 transparent;
+}
+
+.lsm-store-card:hover .lsm-card-body::-webkit-scrollbar-thumb,
+.lsm-store-card:focus-within .lsm-card-body::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.lsm-card-body h3,
+.lsm-popup h3 {
+    max-width: 100%;
+    margin: 0 0 9px;
+    color: #171717;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.28;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.lsm-card-body p,
+.lsm-popup p {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 8px;
+    align-items: start;
+    max-width: 100%;
+    margin: 0 0 7px;
+    color: var(--lsm-muted);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.lsm-card-body p span,
+.lsm-popup p span {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.lsm-card-body h3,
+.lsm-card-body p span {
+    display: block;
+    overflow: visible;
+}
+
+.lsm-card-body h3 {
+    -webkit-line-clamp: unset;
+}
+
+.lsm-card-body .lsm-line-address span {
+    -webkit-line-clamp: unset;
+}
+
+.lsm-card-body .lsm-line-phone span,
+.lsm-card-body .lsm-line-email span,
+.lsm-card-body .lsm-line-hours span {
+    -webkit-line-clamp: unset;
+}
+
+.lsm-card-body .lsm-line-phone span {
+    -webkit-line-clamp: unset;
+}
+
+.lsm-optional {
+    display: grid;
+}
+
+/* =====================================================
+   Icons
+===================================================== */
+
+.lsm-ico {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    align-items: center;
+    justify-content: center;
+    color: var(--lsm-yellow);
+    flex: 0 0 18px;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.lsm-ico-direction {
+    color: var(--lsm-blue);
+    font-size: 15px;
+}
+
+/* =====================================================
+   Buttons
+===================================================== */
+
+.lsm-card-actions,
+.lsm-popup-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    max-width: 100%;
+    margin-top: 10px;
+    overflow: visible;
+}
+
+.lsm-more,
+.lsm-direction,
+.lsm-popup-direction {
+    display: inline-flex;
+    min-height: 31px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.lsm-more {
+    gap: 5px;
+    padding: 0;
+    background: transparent !important;
+    color: var(--lsm-blue) !important;
+}
+
+.lsm-more:hover,
+.lsm-more:focus {
+    color: #0e688b !important;
+}
+
+.lsm-direction,
+.lsm-popup-direction {
+    gap: 5px;
+    color: var(--lsm-blue) !important;
+    background: transparent;
+}
+
+.lsm-direction:hover,
+.lsm-popup-direction:hover,
+.lsm-direction:focus,
+.lsm-popup-direction:focus {
+    color: #0e688b !important;
+}
+
+/* =====================================================
+   Map
+===================================================== */
+
+.lsm-map-area {
+    position: relative;
+    z-index: 0;
+    min-width: 0;
+    overflow: hidden;
+    background: #eef1f2;
+}
+
+.lsm-map {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+}
+
+.lsm-store-locator .leaflet-pane,
+.lsm-store-locator .leaflet-top,
+.lsm-store-locator .leaflet-bottom {
+    z-index: 1 !important;
+}
+
+.lsm-store-locator .leaflet-control,
+.lsm-store-locator .leaflet-popup {
+    z-index: 2 !important;
+}
+
+body header,
+body #masthead,
+body .site-header,
+body .elementor-location-header,
+body .elementor-sticky {
+    position: relative;
+    z-index: 10000;
+}
+
+.lsm-map .leaflet-control-zoom {
+    margin-top: 16px;
+    margin-left: 16px;
+    border: 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);
+}
+
+.lsm-map .leaflet-control-zoom a {
+    width: 38px;
+    height: 38px;
+    color: #111;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+/* Khi thu gọn panel trái, map bung full */
+.lsm-store-locator.is-panel-collapsed {
+    grid-template-columns: 0 minmax(0, 1fr) !important;
+}
+
+.lsm-store-locator.is-panel-collapsed .lsm-panel {
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    border-right: 0 !important;
+}
+
+.lsm-store-locator.is-panel-collapsed .lsm-toggle-panel {
+    left: 18px;
+    z-index: 999;
+    transform: rotate(180deg);
+}
+
+.lsm-store-locator.is-panel-collapsed .lsm-map-area {
+    width: 100%;
+    min-width: 0;
+}
+
+/* =====================================================
+   Popup
+===================================================== */
+
+.lsm-popup {
+    display: grid;
+    grid-template-columns: 180px minmax(260px, 1fr);
+    gap: 18px;
+    max-width: 620px;
+    padding: 0;
+}
+
+.lsm-popup-image {
+    width: 180px;
+    height: 118px;
+    align-self: start;
+    overflow: hidden;
+    background: #ececec;
+}
+
+.lsm-popup h3 {
+    margin-bottom: 12px;
+    padding-right: 18px;
+    font-size: 18px;
+}
+
+.lsm-popup p {
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.lsm-popup .lsm-optional {
+    display: grid;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+}
+
+.leaflet-popup-content {
+    width: auto !important;
+    margin: 16px;
+}
+
+.leaflet-popup-tip {
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.16);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    top: 8px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    color: #b8b8b8;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+/* =====================================================
+   Marker
+===================================================== */
+
+.lsm-marker-pin {
+    position: relative;
+}
+
+.lsm-marker-pin span {
+    position: absolute;
+    left: 6px;
+    top: 1px;
+    width: 42px;
+    height: 42px;
+    border: 7px solid #d33131;
+    border-radius: 50% 50% 50% 0;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.26);
+    transform: rotate(-45deg);
+}
+
+.lsm-marker-pin span::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #d33131;
+}
+
+.lsm-empty {
+    padding: 28px 18px;
+    color: #666;
+    font-size: 16px;
+}
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+@media (max-width: 1180px) {
+    .lsm-store-locator {
+        --lsm-card-height: 145px;
+        grid-template-columns: minmax(420px, 44%) minmax(0, 1fr) !important;
+    }
+
+    .lsm-store-card {
+        grid-template-columns: 135px minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .lsm-card-image {
+        width: 135px;
+        height: 90px;
+        min-width: 135px;
+        max-width: 135px;
+    }
+
+    .lsm-card-body {
+        max-height: 113px;
+    }
+}
+
+@media (max-width: 900px) {
+    .lsm-store-locator {
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+    }
+
+    .lsm-panel {
+        max-height: 500px;
+        border-right: 0;
+        border-bottom: 1px solid #dedede;
+    }
+
+    .lsm-map {
+        min-height: 420px;
+    }
+
+    .lsm-toggle-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 620px) {
+    .lsm-store-locator {
+        --lsm-control-gutter: 10px;
+        --lsm-search-row-height: 62px;
+        --lsm-filter-row-height: 110px;
+        --lsm-controls-height: 172px;
+    }
+
+    .lsm-panel::before {
+        height: var(--lsm-controls-height);
+    }
+
+    .lsm-search {
+        height: var(--lsm-search-row-height);
+        min-height: var(--lsm-search-row-height);
+        max-height: var(--lsm-search-row-height);
+        padding: 10px var(--lsm-control-gutter) 8px;
+    }
+
+    .lsm-search input,
+    .lsm-search-button,
+    .lsm-filters select {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .lsm-search-button {
+        top: 0;
+        right: 0;
+        width: 44px;
+        min-width: 44px;
+        font-size: 20px;
+    }
+
+    .lsm-search input {
+        padding-right: 56px;
+    }
+
+    .lsm-filters {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        height: var(--lsm-filter-row-height);
+        min-height: var(--lsm-filter-row-height);
+        max-height: var(--lsm-filter-row-height);
+        padding: 8px var(--lsm-control-gutter) 14px;
+    }
+
+    .lsm-result-count {
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+
+    .lsm-store-card {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px 10px;
+    }
+
+    .lsm-card-image {
+        width: 110px;
+        height: 74px;
+        min-width: 110px;
+        max-width: 110px;
+    }
+
+    .lsm-card-body {
+        max-height: 104px;
+    }
+
+    .lsm-card-body h3 {
+        font-size: 18px;
+    }
+
+    .lsm-card-body p {
+        grid-template-columns: 24px minmax(0, 1fr);
+        gap: 10px;
+        font-size: 15px;
+    }
+
+    .lsm-card-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .lsm-popup {
+        grid-template-columns: 1fr;
+    }
+
+    .lsm-popup-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+}
+.lsm-map .leaflet-control-attribution {
+    display: none !important;
+}
+/* =====================================================
+   Giới hạn danh sách cửa hàng: hiện tối đa 4 cái
+   Từ cái thứ 5 thì scroll xuống
+===================================================== */
+
+/* Giữ danh sách scroll theo chiều cao widget, không cắt nội dung card. */
+.lsm-store-locator {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    align-items: stretch !important;
+}
+
+.lsm-panel {
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+.lsm-list {
+    flex: 0 0 auto !important;
+    height: auto !important;
+    max-height: calc(var(--lsm-card-height) * 4) !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* Card luôn bằng nhau, nội dung được gói gọn trong chiều cao cố định. */
+.lsm-store-card {
+    height: var(--lsm-card-height) !important;
+    min-height: var(--lsm-card-height) !important;
+    max-height: var(--lsm-card-height) !important;
+    overflow: hidden !important;
+}
+
+.lsm-map-area,
+.lsm-map {
+    min-height: 0 !important;
+    height: 100% !important;
+}
+
+/* Không cho text dài làm card phình quá cao */
+.lsm-card-body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+.lsm-card-body h3 {
+    display: block !important;
+    overflow: visible !important;
+}
+
+.lsm-card-body p span {
+    display: block !important;
+    overflow: visible !important;
+}
+
+/* Scrollbar gọn */
+.lsm-list::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.lsm-list::-webkit-scrollbar-track {
+    background: #e9e9e9 !important;
+}
+
+.lsm-list::-webkit-scrollbar-thumb {
+    background: #111 !important;
+    border-radius: 0 !important;
+}
+
+@media (max-width: 900px) {
+    .lsm-store-locator {
+        --lsm-card-height: 145px;
+    }
+
+    .lsm-list {
+        height: auto !important;
+        max-height: calc(var(--lsm-card-height) * 4) !important;
+    }
+
+    .lsm-map,
+    .lsm-map-area {
+        min-height: 420px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .lsm-store-locator {
+        --lsm-card-height: 132px;
+    }
+}
+
+/* =====================================================
+   Elementor Pro compatibility + responsive hardening
+===================================================== */
+
+.elementor-widget-shortcode .lsm-store-locator,
+.elementor-shortcode .lsm-store-locator,
+.lsm-store-locator {
+    max-width: 100% !important;
+}
+
+.lsm-panel {
+    z-index: 5;
+}
+
+.lsm-search,
+.lsm-filters {
+    position: relative;
+    z-index: 6;
+}
+
+.lsm-search-inner,
+.lsm-filters select {
+    height: 48px;
+}
+
+.lsm-list.is-empty {
+    height: auto !important;
+    min-height: 180px !important;
+    max-height: none !important;
+}
+
+@media (min-width: 901px) {
+    .lsm-store-locator {
+        height: var(--lsm-height) !important;
+        min-height: var(--lsm-height) !important;
+        max-height: var(--lsm-height) !important;
+    }
+
+    .lsm-panel,
+    .lsm-map-area,
+    .lsm-map {
+        height: 100% !important;
+        min-height: 100% !important;
+    }
+
+    .lsm-list {
+        flex: 1 1 auto !important;
+        height: auto !important;
+        max-height: none !important;
+        min-height: 0 !important;
+    }
+
+    .lsm-list.is-empty {
+        flex: 1 1 auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .lsm-store-locator {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+    }
+
+    .lsm-panel {
+        width: 100% !important;
+        max-height: none !important;
+        border-right: 0 !important;
+    }
+
+    .lsm-list {
+        height: auto !important;
+        max-height: 620px !important;
+    }
+
+    .lsm-list.is-empty {
+        min-height: 190px !important;
+    }
+
+    .lsm-map,
+    .lsm-map-area {
+        width: 100% !important;
+        min-height: 380px !important;
+        height: 380px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .lsm-search-inner,
+    .lsm-filters select {
+        height: 44px;
+    }
+
+    .lsm-filters {
+        grid-template-columns: 1fr !important;
+    }
+
+    .lsm-list {
+        height: auto !important;
+        max-height: 560px !important;
+    }
+
+    .lsm-list.is-empty {
+        min-height: 150px !important;
+    }
+
+    .lsm-map,
+    .lsm-map-area {
+        min-height: 330px !important;
+        height: 330px !important;
+    }
+}
+/* =====================================================
+   Fix nút thu gọn panel: hiện rõ, vuông, icon giữa
+===================================================== */
+
+.lsm-toggle-panel {
+    position: absolute !important;
+    top: 95px !important;
+    left: 17px !important;
+    z-index: 9999 !important;
+
+    width: 37px !important;
+    height: 37px !important;
+    min-width: 37px !important;
+    min-height: 37px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border: 0 !important;
+    background: #ffffff !important;
+    color: #111 !important;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
+    cursor: pointer !important;
+
+    font-size: 0 !important;
+    line-height: 1 !important;
+    transform: none !important;
+}
+
+/* Icon mũi tên luôn nằm giữa */
+.lsm-toggle-panel::before {
+    content: "‹" !important;
+    display: block !important;
+    color: #111 !important;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Khi thu gọn panel: không xoay nguyên nút, chỉ đổi icon */
+.lsm-store-locator.is-panel-collapsed .lsm-toggle-panel {
+    position: absolute !important;
+    left: 17px !important;
+    z-index: 9999 !important;
+    transform: none !important;
+}
+
+.lsm-store-locator.is-panel-collapsed .lsm-toggle-panel::before {
+    content: "›" !important;
+    transform: translateY(-2px) !important;
+}

@@ -1,0 +1,107 @@
+.lsm-admin-grid {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(380px, 1.2fr);
+    gap: 28px;
+    padding: 14px 0;
+}
+
+.lsm-field-row {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.lsm-field-row label {
+    font-weight: 500;
+}
+
+.lsm-field-row input[type="text"],
+.lsm-coordinate-row input {
+    width: 100%;
+}
+
+.lsm-coordinate-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.lsm-coordinate-row label {
+    display: grid;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.lsm-admin-map {
+    width: 100%;
+    height: 360px;
+    border: 1px solid #ccd0d4;
+    background: #f6f7f7;
+}
+
+.lsm-image-preview {
+    display: inline-flex;
+    min-width: 64px;
+    min-height: 64px;
+    margin-left: 10px;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+.lsm-image-preview img {
+    max-width: 80px;
+    max-height: 80px;
+    display: block;
+}
+
+.lsm-default-pin {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    border-radius: 50% 50% 50% 0;
+    background: #d84a4a;
+    transform: rotate(-45deg);
+    position: relative;
+}
+
+.lsm-default-pin::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+}
+
+.lsm-tab-panel {
+    display: none;
+    padding-top: 24px;
+}
+
+.lsm-tab-panel.is-active {
+    display: block;
+}
+
+.lsm-settings .form-table input[type="text"].regular-text,
+.lsm-settings .form-table input[type="url"].regular-text {
+    width: min(620px, 100%);
+}
+
+@media (max-width: 1100px) {
+    .lsm-admin-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .lsm-field-row,
+    .lsm-coordinate-row {
+        grid-template-columns: 1fr;
+    }
+}
