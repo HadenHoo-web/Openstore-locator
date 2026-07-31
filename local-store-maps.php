@@ -1,11 +1,4 @@
 <?php
-/**
- * Plugin Name: Local Store Maps
- * Description: Quản lý danh sách địa điểm cửa hàng và hiển thị bản đồ bằng shortcode [local_store] không cần Google Maps API.
- * Version: 1.1.18
- * Author: Wordpress
- * Text Domain: local-store-maps
- */
 
 if (!defined('ABSPATH')) {
     exit;
