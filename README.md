@@ -7,6 +7,8 @@
 
 A lightweight WordPress store locator plugin for publishing beautiful, searchable store maps with Leaflet and OpenStreetMap. No Google Maps API key required.
 
+![OpenStore Locator frontend preview](assets/screenshots/frontend-store-locator.png)
+
 ## Why It Exists
 
 OpenStore Locator gives WordPress sites a clean store-finder experience without the friction of paid map APIs. Add stores in the admin dashboard, organize them by province and district, then drop one shortcode into any page to render a responsive map with filters, store cards, popups, and direction links.
@@ -51,13 +53,11 @@ A lightweight WordPress store locator plugin powered by Leaflet and OpenStreetMa
 
 ## Screenshots
 
-Add your plugin screenshots here after publishing the repo:
+The frontend experience combines a searchable store list with an interactive Leaflet map. Customers can search by keyword, filter by province or district, browse store cards, and visually locate each branch through map markers.
 
-```md
-![Store locator frontend](assets/screenshots/frontend.png)
-![Store editor map](assets/screenshots/admin-map.png)
-![Plugin settings](assets/screenshots/settings.png)
-```
+![Searchable store locator interface](assets/screenshots/frontend-store-locator.png)
+
+You can add more screenshots later for the admin store editor and plugin settings page.
 
 ## Installation
 
